@@ -9,4 +9,4 @@ function urodziny($pesel)
     return $dzien . "-" . $miesiac ."-" . $rok;
 }
 echo urodziny($pesel);
-?>
+
