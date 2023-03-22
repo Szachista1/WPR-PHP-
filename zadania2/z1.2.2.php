@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <html>
 <FORM name="jeden" action="z1.2.2.php" method="POST">
