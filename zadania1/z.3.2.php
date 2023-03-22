@@ -8,4 +8,4 @@ function roll($t)
 }
 $a= roll(20);
 print_r($a);
-?> 
+?>

@@ -1,6 +1,6 @@
 <?php
-function cupe(){
+function kostka(){
     return rand(1,6);
 }
-echo cupe();
+echo kostka();
 ?>
