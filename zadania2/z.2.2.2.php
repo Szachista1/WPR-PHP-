@@ -19,13 +19,17 @@ if(isset($_POST['liczba1']) && isset($_POST['liczba2'])) {
 }
     if (isset($_POST['liczba']))
         if (is_numeric($_POST['liczba']))
-            // inne przypadki przeliczeń jednostek
-            if ($_POST['lol'] == 'Stopnie_na_radiany') {
-                echo $_POST['liczba'] * pi() / 180;
-            }
-            elseif ($_POST['lol'] =='Radiany_na_stopnie'){
-                echo $_POST['liczba']*180/pi();
-            }
+
+            if ($_POST['lol'] == 'Stopnie_na_radiany') echo $_POST['liczba'] * pi() / 180;
+            elseif ($_POST['lol'] =='Radiany_na_stopnie') echo $_POST['liczba']*180/pi();
+            elseif($_POST['lol']=='Dziesiętne_na_binarne') echo decbin($_POST['liczba']);
+            elseif($_POST['lol']=='Dziesiętne_na_szesnastkowe') echo dechex($_POST['liczba']);
+            elseif($_POST['lol']=='Szesnastkowe_na_dziesiętne') echo hexdec($_POST['liczba']);
+            elseif($_POST['lol']=='Binarne_na_dziesiętne') echo bindec($_POST['liczba']);
+            elseif($_POST['lol']=='Cosinus') echo cos($_POST['liczba']);
+            elseif($_POST['lol']=='Sinus') echo sin($_POST['liczba']);
+            elseif($_POST['lol']=='Tangens') echo tan($_POST['liczba']);
+
 ?>
 <HTML>
 <table>
