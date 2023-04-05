@@ -1,0 +1,2 @@
+PHP https://www.php.net/manual/en/language.basic-syntax.comments.php
+java https://www.w3schools.com/java/java_comments.asp
