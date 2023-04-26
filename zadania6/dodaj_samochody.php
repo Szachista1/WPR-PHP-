@@ -14,18 +14,19 @@ cena: <input type="text", name="cena"><BR>
     if(!empty($_POST['marka']) && !empty($_POST['model']) && !empty($_POST['marka']) && is_numeric($_POST['rok']) && !empty($_POST['opis']) && is_numeric($_POST['cena'])) {
     if (!$x=mysqli_connect("localhost", "root" , "", "mojaBaza" ) )   {
     echo "Nie udało się zrbić";
-    exit;
+    exit();}
     $query="INSERT INTO samochody  (marka, model, rok, opis, cena) ";
 $query.="VALUES ('{$_POST['marka']}', '{$_POST['model']}', {$_POST['rok']}, '{$_POST['opis']}', {$_POST['cena']})";
 $rezultat=mysqli_query($x, $query);
-if (mysqli_affected_rows($x)==1) { echo "został dodany";
+if (mysqli_affected_rows($x)==1) {
+    echo "został dodany";
 }
 if (!mysqli_close($x)){
     echo "jest prblem";
     exit();
 }
     }
-    }   }}
+    }   }
     ?>
 </FORM>
 </HTML>
