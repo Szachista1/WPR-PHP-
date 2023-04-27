@@ -22,9 +22,22 @@ if (mysqli_affected_rows($x)==1) {
     echo "został dodany";
 }
 if (!mysqli_close($x)){
-    echo "jest prblem";
+    echo "jest prblem\t";
     exit();
 }
+$query1= "SELECT * FROM samochody ORDER BY (rok) (ASC)";
+$rezultat1=mysqli_query($x, $query1);
+        if (mysqli_affected_rows($x)==1) {
+            echo $query1;
+        }
+        if (!mysqli_close($x)) {
+            echo "jest prblem\t";
+            exit();
+
+
+
+        }
+        echo $query1;
     }
     }   }
     ?>
