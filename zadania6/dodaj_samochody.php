@@ -27,7 +27,8 @@
                 }
 
                 $query1= "SELECT * FROM samochody ORDER BY (rok) ASC";
-                $rezultat1=mysqli_query($x, $query1);
+                $query1.="VALUES ('{$_POST['marka']}', '{$_POST['model']}', {$_POST['rok']}, '{$_POST['opis']}', {$_POST['cena']})";
+                $rezultat=mysqli_query($x, $query1);
                 if (mysqli_affected_rows($x)==1) {
                     echo $query1;
                 }
