@@ -21,7 +21,21 @@ Hasło:    <input type="password" name="hasło"><br>
 E-mail:    <input type="e-mail" name="e-mailn"><br>
 Hasło:    <input type="password" name="hasłon"><br>
 Psełdonim:    <input type="text" name="psedonimn"><br>
-    <input type="file" name="profilawen">
+    <input type="file" name="profilawen" value="profilawen">
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_FILES['profilawen']) && $_FILES['profilawen']['error'] === UPLOAD_ERR_OK) {
+            $plik = fopen('index.html', 'a');
+            $zawartosc = file_get_contents($_FILES['profilawen']['tmp_name']);
+            fwrite($plik, $zawartosc);
+            fclose($plik);
+            echo 'Plik został zapisany.';
+        } else {
+            echo 'Wystąpił błąd podczas przesyłania pliku.';
+        }
+    }
+    ?>
     <input type="submit">
 </form>
 </BODY>
+</HTML>
