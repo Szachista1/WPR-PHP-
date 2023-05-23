@@ -16,7 +16,12 @@ Psełdonim:<input type="text" name="psełdonim">
     Witamy na forum internetowym.<br>
     Jeśli masz u nas konto to podaj e-mail oraz hasło.
     <input type="email" name="e-mail"><br>
-    <input type="password" name="hasło">
+    <input type="password" name="hasło"><br>
+    Jeśli chcesz założyć u nas konto to podaj te dane:<br>
+E-mail:    <input type="e-mail" name="e-mailn"><br>
+Hasło:    <input type="password" name="hasłon"><br>
+Psełdonim:    <input type="text" name="psedonimn"><br>
+    <input type="file" name="profilwen">
     <input type="submit">
 </form>
 </BODY>
