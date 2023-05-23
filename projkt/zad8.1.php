@@ -1,6 +1,6 @@
 <?php
-date_default_timezone_set('GMT');
-$data=date_default_timezone_get();
+//date_default_timezone_set('GMT');
+//$data=date_default_timezone_get();
 session_start();
 ?>
 <HTML>
@@ -10,7 +10,7 @@ session_start();
     Jęśli nie masz i nie masz u nas konta i nie chcesz mieć to wypełnij te dane:<br>
 Temat:    <input type="text" name="temat"><br>
 Wpis:    <input type="text" name="wpis"><br>
-Data: <?php echo $data;
+Data: <?php echo date('Y-m-d H:i:s');
     ?><br>
 Psełdonim:<input type="text" name="psełdonim">
     Witamy na forum internetowym.<br>
