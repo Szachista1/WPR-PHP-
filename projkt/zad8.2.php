@@ -12,8 +12,10 @@ if (!empty($_POST['e-mail']) || !empty($_POST['hasło'])){
 
 <?php
 }
-elseif (isset($_POST['temat'])) {
-    echo $_POST['temat']; }
+elseif (isset($_POST['temat']) || isset($_POST['wpis']) || isset($_POST['psełdonim'])) {
+    $data =date('Y-m-d H:i:s');
+    echo $_POST['temat']." ".$_POST['wpis']." ".$_POST['psełdonim']." ".$data;
+}
 ?>
 
 </html>
