@@ -16,6 +16,7 @@ elseif (isset($_POST['temat']) || isset($_POST['wpis']) || isset($_POST['psełdo
     $data =date('Y-m-d H:i:s');
     echo $_POST['temat']." ".$_POST['wpis']." ".$_POST['psełdonim']." ".$data;
 }
-?>
-
-</html>
+if(isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['hasłon']) || isset($_POST['profilowen'])){
+    echo $_POST['e-mailn'];
+}
+?></html>
