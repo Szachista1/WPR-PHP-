@@ -41,6 +41,7 @@ if (!empty($_POST['e-mail']) || !empty($_POST['hasło'])){
 
            // Zamknięcie połączenia z bazą danych
            $mysqli->close();
+           echo $wpis."\n".$pseudonim;
        }
 
    }
