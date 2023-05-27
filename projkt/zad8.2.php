@@ -34,14 +34,14 @@ if (!empty($_POST['e-mail']) || !empty($_POST['hasło'])){
 
            // Wykonanie zapytania
            if ($mysqli->query($query) === TRUE) {
-               echo "Dane zostały dodane do bazy danych";
+               echo "Dane zostały dodane do bazy danych".$wpis."\t".$pseudonim;
            } else {
                echo "Wystąpił problem podczas dodawania danych do bazy danych: " . $mysqli->error;
            }
 
            // Zamknięcie połączenia z bazą danych
            $mysqli->close();
-           echo $wpis."\n".$pseudonim;
+
        }
 
    }
