@@ -12,11 +12,40 @@ if (!empty($_POST['e-mail']) || !empty($_POST['hasło'])){
 
 <?php
 }
-elseif (isset($_POST['temat']) || isset($_POST['wpis']) || isset($_POST['psełdonim'])) {
-    $data =date('Y-m-d H:i:s');
-    echo $_POST['temat']." ".$_POST['wpis']." ".$_POST['psełdonim']." ".$data;
-}
-if(isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['hasłon']) || isset($_POST['profilowen'])){
+   else if (!empty($_POST['wpis']) || !empty($_POST['psełdonim'])) {
+       if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['wpis']) && isset($_POST['psełdonim'])) {
+           $wpis = $_POST['wpis'];
+           $pseudonim = $_POST['psełdonim'];
+
+           // Połączenie z bazą danych
+           $mysqli = new mysqli("localhost", "root", "", "projekt");
+
+           // Sprawdzenie połączenia
+           if ($mysqli->connect_error) {
+               die("Nie udało się połączyć z bazą danych: " . $mysqli->connect_error);
+           }
+
+           // Ucieczka znaków dla bezpieczeństwa
+           $tresc = $mysqli->real_escape_string($wpis);
+           $pseudonim = $mysqli->real_escape_string($pseudonim);
+
+           // Zapytanie INSERT do wstawienia danych do tabeli
+           $query = "INSERT INTO komentarz (tresc, pseudonim) VALUES ('$tresc', '$pseudonim')";
+
+           // Wykonanie zapytania
+           if ($mysqli->query($query) === TRUE) {
+               echo "Dane zostały dodane do bazy danych";
+           } else {
+               echo "Wystąpił problem podczas dodawania danych do bazy danych: " . $mysqli->error;
+           }
+
+           // Zamknięcie połączenia z bazą danych
+           $mysqli->close();
+       }
+
+   }
+elseif(!empty($_POST['e-mailn'])|| !empty($_POST['psełdonimn']) || !empty($_POST['hasłon'])) {
+if(isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['hasłon']) || isset($_POST['profilowen'])) {
 
     $target_directory = "C:\Users\igwar\WPR-PHP-\projkt\profilowe"; // Zmień na właściwą ścieżkę docelową
     $target_file = $target_directory . basename($_FILES["profilawen"]["name"]);
@@ -47,9 +76,9 @@ if(isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['has
                 echo "Plik został pomyślnie przesłany i zapisany w: " . $target_file;
             } else {
                 echo "Wystąpił problem podczas przesyłania pliku.";
+                }
             }
         }
     }
-
 }
 ?></html>
