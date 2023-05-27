@@ -11,6 +11,10 @@ if (!empty($_POST['e-mail']) || !empty($_POST['hasło'])){
 </form>
     </html>
 <?php
+
+if ($_POST['e-mail']=="admin@forum.pl" || $_POST['hasło']=="1234"){
+    echo "admin";
+}
 }
    else if (!empty($_POST['wpis']) || !empty($_POST['psełdonim'])) {
        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['wpis']) && isset($_POST['psełdonim'])) {
