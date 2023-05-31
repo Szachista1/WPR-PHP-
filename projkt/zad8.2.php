@@ -95,3 +95,12 @@ elseif(!empty($_POST['e-mailn'])|| !empty($_POST['psełdonimn']) || !empty($_POS
         }
     }
 } ?>
+<?php
+if(!empty($_POST['temat'])) {
+    if(isset($_POST['temat'])) $_SESSION['temat']=$_POST['temat']; ?>{
+        <html>
+        <form method="post" action="zad.8.4.php"><input type="submit" name="d1"></form>
+        </html>
+<?php
+
+} ?>
