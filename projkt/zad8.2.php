@@ -22,7 +22,7 @@ if ($_POST['e-mail']=="admin@forum.pl" || $_POST['hasło']=="1234"){
            $pseudonim = $_POST['psełdonim'];
 
            // Połączenie z bazą danych
-           $mysqli = new mysqli("localhost", "root", "", "projekt");
+           $mysqli = new mysqli("localhost", "root", "", "projekt1");
 
            // Sprawdzenie połączenia
            if ($mysqli->connect_error) {
@@ -49,6 +49,7 @@ if ($_POST['e-mail']=="admin@forum.pl" || $_POST['hasło']=="1234"){
             <form method="post" action="zad8.3.php">
             Wpis:<input type="text" name="wpis">
             Psełdonim:<input type="text" name="psełdonim">
+            <input name="Wybierz co chcesz!" required><option>komentarz</option><option>opowiedź</option></select></td>
             </form>
             </HTML>
 
@@ -58,6 +59,7 @@ if ($_POST['e-mail']=="admin@forum.pl" || $_POST['hasło']=="1234"){
        }
 elseif(!empty($_POST['e-mailn'])|| !empty($_POST['psełdonimn']) || !empty($_POST['hasłon'])) {
     if (isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['hasłon']) || isset($_POST['profilowen'])) {
+
 
         $target_directory = "C:\Users\igwar\WPR-PHP-\projkt\profilowe"; // Zmień na właściwą ścieżkę docelową
         $target_file = $target_directory . basename($_FILES["profilawen"]["name"]);
