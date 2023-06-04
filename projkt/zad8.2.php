@@ -59,8 +59,6 @@ if ($_POST['e-mail']=="admin@forum.pl" || $_POST['hasło']=="1234"){
        }
 elseif(!empty($_POST['e-mailn'])|| !empty($_POST['psełdonimn']) || !empty($_POST['hasłon'])) {
     if (isset($_POST['e-mailn']) || isset($_POST['psełdonimn']) || isset($_POST['hasłon']) || isset($_POST['profilowen'])) {
-
-
         $target_directory = "C:\Users\igwar\WPR-PHP-\projkt\profilowe"; // Zmień na właściwą ścieżkę docelową
         $target_file = $target_directory . basename($_FILES["profilawen"]["name"]);
         $uploadOk = 1;
