@@ -20,8 +20,9 @@ E-mail:    <input type="e-mail" name="e-mailn"><br>
 Hasło:    <input type="password" name="hasłon"><br>
 Psełdonim:    <input type="text" name="psedonimn"><br>
     <input type="file" name="profilawen" value="profilawen" accept="image/*"><input type="submit">
-    <a href="zad.8.4.php" >Tematy</a>
-    <a href="nowe_konto.php">nowe_konto</a>
+    <a href="zad.8.4.php" >Tematy</a><br>
+    <a href="nowe_konto.php">nowe_konto</a><br>
+    <a href="zaloguj_się.php">zaloguj się</a>
 </form>
 </BODY>
 </HTML>
