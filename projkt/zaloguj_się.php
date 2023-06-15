@@ -48,7 +48,7 @@ if (isset($_POST['login']) && isset($_POST['hasło'])) {
 
 <HTML>
 <form action="" method="post">
-    e-mail:<input type="text" name="login"><br>
+    psełdonim:<input type="text" name="login"><br>
     hasło:<input type="password" name="hasło"><br>
     <input type="submit" value="Submit">
 </form>

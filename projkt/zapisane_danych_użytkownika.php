@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['e-mailn'];
     $password = $_POST['hasłon'];
     $pseudonym = $_POST['psedonimn'];
+    $email= $_POST['e-mailn'];
 
     // Validate and sanitize the data (you should implement proper validation)
 
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and execute the SQL query to insert the data into the table
-    $sql = "INSERT INTO uzytkownik (login, haslo) VALUES ('$pseudonym', '$password')";
+    $sql = "INSERT INTO uzytkownik (login, haslo,email) VALUES ('$pseudonym', '$password', '$email')";
     if ($conn->query($sql) === TRUE) {
         $lastInsertedId = $conn->insert_id;
         $targetDir = "C:/Users/igwar/WPR-PHP-/projkt/";
