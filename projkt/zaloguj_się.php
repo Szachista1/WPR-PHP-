@@ -43,11 +43,13 @@ if (isset($_POST['login']) && isset($_POST['hasło'])) {
 
     // Close the database connection
     $conn->close();
+
 }
+$_SESSION['login']=$_SESSION['login'];
 ?>
 
 <HTML>
-<form action="" method="post">
+<form action="wpsis_uzytkownika_z.php" method="post">
     psełdonim:<input type="text" name="login"><br>
     hasło:<input type="password" name="hasło"><br>
     <input type="submit" value="Submit">
