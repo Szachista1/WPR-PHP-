@@ -22,26 +22,31 @@ if (isset($_POST['temat']) && isset($_POST['wpis'])) {
     if ($userResult && $userResult->num_rows > 0) {
         $userData = $userResult->fetch_assoc();
         $idUzytkownika = $userData['id'];
+    } else {
+        // Dodaj nowego użytkownika do tabeli "uzytkownik"
+        $insertUserQuery = "INSERT INTO uzytkownik (login) VALUES (?)";
+        $stmt = $conn->prepare($insertUserQuery);
+        $stmt->bind_param("s", $login);
+        $stmt->execute();
+        $idUzytkownika = $stmt->insert_id;
     }
 
     $insertQuery = "INSERT INTO temat (tytul, tresc, idUzytkownika) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($insertQuery);
     $stmt->bind_param("ssi", $temat, $wpis, $idUzytkownika);
     if ($stmt->execute()) {
-        $_SESSION['temat'] = $_POST['temat'];
-        $_SESSION['wpis'] = $_POST['wpis'];
+        $_SESSION['temat'] = $temat;
+        $_SESSION['wpis'] = $wpis;
         echo $_SESSION['temat'] . "<br>";
         echo $_SESSION['wpis'] . "<br>";
-
     }
 
     echo $_SESSION['login'];
-} ?>
-<html>
-<a href="komentarz.php">komentarz</a></html>
+    $conn->close();
+}
 ?>
-
 <html>
+<a href="komentarz.php">komentarz</a>
 <form action="" method="post">
     temat <input type="text" name="temat"><br>
     <input type="text" name="wpis"><br>
