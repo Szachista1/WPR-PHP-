@@ -59,8 +59,9 @@ if (isset($_POST['psełdonim']) && isset($_POST['temat']) && isset($_POST['wpis'
 ?>
 
 <HTML>
-<form action="" method="post">
-    komentarz: <input type="text" name="tesc"><br>
+<form action="wpisanie_komentarza_un.php" method="post">
+    komentarz: <input type="text" name="tresc"><br>
+    psełdonim:<input type="text" name="psełdonim1"><br>
     <input type="submit">
 </form>
 </HTML>

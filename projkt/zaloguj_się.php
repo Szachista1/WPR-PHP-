@@ -45,7 +45,7 @@ if (isset($_POST['login']) && isset($_POST['hasło'])) {
     $conn->close();
 
 }
-$_SESSION['login']=$_SESSION['login'];
+$_SESSION['login']=$_POST['login'];
 ?>
 
 <HTML>
