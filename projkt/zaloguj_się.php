@@ -32,7 +32,7 @@ if (isset($_POST['login']) && isset($_POST['hasło'])) {
         if (!($_POST['hasło']) == $row['hasło']) {
             $_SESSION['login'] = $login;
             // Redirect to the interface page
-            header("Location: przejscie_do_interfejsu.php");
+            header("Location: wpsis_uzytkownika_z.php");
             exit();
         } else {
             echo "Incorrect password!";
@@ -43,16 +43,13 @@ if (isset($_POST['login']) && isset($_POST['hasło'])) {
 
     // Close the database connection
     $conn->close();
-
 }
-$_SESSION['login']=$_POST['login'];
 ?>
 
 <HTML>
-<form action="wpsis_uzytkownika_z.php" method="post">
+<form action="" method="post">
     psełdonim:<input type="text" name="login"><br>
     hasło:<input type="password" name="hasło"><br>
     <input type="submit" value="Submit">
 </form>
 </HTML>
-
